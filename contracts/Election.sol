@@ -32,6 +32,12 @@ contract Election {
 		
 		voters[msg.sender] = true;
 		candidates[candidateID].votes++;
+		votedEvent(candidateID);
 	}
+
+	 // voted event
+    event votedEvent (
+        uint indexed _candidateID
+    );
 
 }
